@@ -6,7 +6,7 @@ namespace Soenneker.Dtos.BranchEnvironment;
 /// <summary>
 /// A class that represents the environment and branch type association.
 /// </summary>
-public class BranchEnvironment
+public sealed class BranchEnvironment
 {
     /// <summary>
     /// Gets or sets the deployment environment (e.g., Development, Staging, Production).
