@@ -43,6 +43,6 @@
 
     <ItemGroup>
       <PackageReference Include="Soenneker.Enums.DeployEnvironment" Version="3.0.177" />
-      <PackageReference Include="Soenneker.Enums.GitBranches" Version="3.0.11" />
+      <PackageReference Include="Soenneker.Enums.GitBranches" Version="3.0.12" />
     </ItemGroup>
 </Project>
