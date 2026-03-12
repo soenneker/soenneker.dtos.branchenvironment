@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Dtos.BranchEnvironment.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Dtos.BranchEnvironment\Soenneker.Dtos.BranchEnvironment.csproj" />
     </ItemGroup>
 
     <ItemGroup>
