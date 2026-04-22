@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.Dtos.BranchEnvironment.Tests;
 
 public sealed class BranchEnvironmentTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
