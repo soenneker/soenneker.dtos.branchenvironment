@@ -44,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Enums.DeployEnvironment" Version="4.0.216" />
+        <PackageReference Include="Soenneker.Enums.DeployEnvironment" Version="4.0.220" />
         <PackageReference Include="Soenneker.Enums.GitBranches" Version="4.0.52" />
     </ItemGroup>
 </Project>
