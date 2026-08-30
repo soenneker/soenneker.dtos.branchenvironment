@@ -4,7 +4,7 @@ using Soenneker.Enums.GitBranches;
 namespace Soenneker.Dtos.BranchEnvironment;
 
 /// <summary>
-/// A class that represents the environment and branch type association.
+/// Associates a Git branch with a deployment environment.
 /// </summary>
 public sealed class BranchEnvironment
 {
@@ -14,7 +14,7 @@ public sealed class BranchEnvironment
     public DeployEnvironment DeployEnvironment { get; set; } = null!;
 
     /// <summary>
-    /// Gets or sets the branch type
+    /// Gets or sets the Git branch.
     /// </summary>
     public GitBranch Branch { get; set; } = null!;
 }

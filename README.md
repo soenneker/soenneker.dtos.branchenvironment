@@ -5,21 +5,43 @@
 
 # Soenneker.Dtos.BranchEnvironment
 
-A class that represents the environment and branch type association.
+Associates a known Git branch with a deployment environment.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.Dtos.BranchEnvironment
 ```
 
-## What you get
+## Usage
 
-- `BranchEnvironment` — A class that represents the environment and branch type association.
+```csharp
+using Soenneker.Dtos.BranchEnvironment;
+using Soenneker.Enums.DeployEnvironment;
+using Soenneker.Enums.GitBranches;
 
-## API at a glance
+var mappings = new[]
+{
+    new BranchEnvironment
+    {
+        Branch = GitBranch.Develop,
+        DeployEnvironment = DeployEnvironment.Development
+    },
+    new BranchEnvironment
+    {
+        Branch = GitBranch.Staging,
+        DeployEnvironment = DeployEnvironment.Staging
+    },
+    new BranchEnvironment
+    {
+        Branch = GitBranch.Main,
+        DeployEnvironment = DeployEnvironment.Production
+    }
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `BranchEnvironment.DeployEnvironment` | Gets or sets the deployment environment (e.g., Development, Staging, Production). | Gets or sets the deployment environment (e.g., Development, Staging, Production). |
-| `BranchEnvironment.Branch` | Gets or sets the branch type. | Gets or sets the branch type. |
+The DTO stores one association; it does not infer an environment from a branch, enforce a one-to-one mapping, read the current Git branch, or perform a deployment. Build the collection that matches your release process and perform lookup in the caller.
+
+Both properties use Soenneker generated enum-value types rather than C# enums. `GitBranch` supplies `Develop`, `Staging`, and `Main`; `DeployEnvironment` supplies `Test`, `Local`, `E2E`, `Development`, `Staging`, and `Production`.
+
+Properties are mutable and are not initialized by the parameterless constructor. Assign both before use. Serialization behavior comes from the enum-value types and the serializer configuration in your application; this DTO does not declare its own JSON property names or converters.
